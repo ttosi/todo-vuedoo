@@ -1,0 +1,14 @@
+{
+  "port": 24012,
+  "path": "./",
+  "clr": "v4.0",
+  "protocol": "http",
+  "iisSettings": {
+    "windowsAuthentication": false,
+    "anonymousAuthentication": true,
+    "iisExpress": {
+      "applicationUrl": "http://localhost:5025",
+      "sslPort": 44393
+    }
+  }
+}

@@ -1,0 +1,8 @@
+{
+  "items": [
+    { "text": "Dashboard", "route": "#" },
+    { "text": "Resources", "route": "#" },
+    { "text": "Documentation", "route": "#" },
+    { "text": "Support", "route": "#" }
+  ]
+}

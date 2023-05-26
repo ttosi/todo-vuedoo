@@ -1,0 +1,20 @@
+{
+  "items": [
+    {
+      "text": "Section One",
+      "type": "label",
+      "items": [
+        { "text": "Section 1 Item 1", "icon": "web", "route": "" },
+        { "text": "Section 1 Item 2", "icon": "palette-outline", "route": "" }
+      ]
+    },
+    {
+      "text": "Section Two",
+      "type": "label",
+      "items": [
+        { "text": "Section 2 Item 1", "icon": "thumb-up-outline", "route": "" },
+        { "text": "Section 2 Item 2", "icon": "account-hard-hat", "route": "" }
+      ]
+    }
+  ]
+}
