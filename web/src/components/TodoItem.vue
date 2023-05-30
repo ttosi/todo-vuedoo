@@ -21,7 +21,7 @@ import { Todo } from "@/models/Todo";
 
 // line 12 & 13 use emits. This sends the todo back to the specified
 // method in the parent (HomeView) so it can apply the changes. Vue doesn't
-// allow mutating any values in the child
+// allow mutating values in the child
 
 // setup the prop to use in the template
 defineProps({

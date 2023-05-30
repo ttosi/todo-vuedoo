@@ -1,10 +1,10 @@
-# Todo VueDoo
-
----
+# Todo Vuedoo
 
 ## Requirements
 
 [.Net Core 7.0.0 SDK](https://dotnet.microsoft.com/en-us/download). Check your version installed by running `dotnet --version`
+
+Local instance of MS Sql Server.
 
 NPM package manager, which is installed along with [Node.js](https://nodejs.org/en/download/?utm_source=blog). To check if NPM is already installed, run `npm -v`, it should be version ^6.0.0, if not, run `npm install -g npm@latest`
 
@@ -12,9 +12,9 @@ Recommended IDE for this project is [VS Code](https://code.visualstudio.com/down
 
 **Note:** The API and frontend run independently of each other. Two command prompts, one for each, are required to run the app. I open the api folder and web folder in different instances of VS Code and use the built in terminals.
 
-## Setup Database
-
 ---
+
+## Setup Database
 
 Create a new table called Todo and execute this script in SSMS which will create the Todo table:
 
@@ -57,9 +57,9 @@ Then scaffold the controller:
 dotnet-aspnet-codegenerator controller -name TodoController -async -api -m Todo -dc TodoContext -outDir Controllers
 ```
 
-## Setup and run API
-
 ---
+
+## Setup and run API
 
 In the api folder:
 
@@ -69,9 +69,9 @@ dotnet build
 dotnet run
 ```
 
-## Setup and run Web
-
 ---
+
+## Setup and run Web
 
 In the web folder:
 

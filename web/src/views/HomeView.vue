@@ -16,8 +16,8 @@
       </div>
       <div class="flex-col border rounded-md overflow-auto h-[400px]">
         <!-- if there are 1 or more todos, list them out using v-for using the todo-item component -->
-        <!-- the :todo="todo" is a prop which is sent to the TodoItem component -->
-        <!-- the @complete and @remove define the method that's called when the event is emitted from the child -->
+        <!-- :todo="todo" is a prop which is sent to the TodoItem component -->
+        <!-- @complete and @remove the methods that're called when the event is emitted from the child -->
         <div v-if="todos.length > 0">
           <todo-item
             v-for="todo in sortedTodos"
@@ -45,7 +45,7 @@ import { useShowConfirmDialog, confirmTitle, confirmMessage } from "@/use/confir
 const todoStore = useTodoStore(); // this hold the events in the store
 const { todo, todos } = storeToRefs(todoStore); // destructor for the props in the store
 
-// this creates a reactive reference for the v-model in the textbox
+// creates a reactive reference for the v-model in the textbox
 const title = ref("");
 
 // call the todoStore to get the list of todos from the api
@@ -55,11 +55,11 @@ const load = async () => {
 load();
 
 const add = () => {
-  if (title.value.trim().length === 0) return; // make sure user isn't trying to add empty values
+  if (title.value.trim().length === 0) return; //don't allow adding empty todo
 
   todo.value = new Todo(); // create a new todo in the store
 
-  // always use .value on refs, it "unwraps" it so the value can be accessed
+  // use .value on refs, it "unwraps" it so the value can be accessed
   todo.value.title = title.value;
   const id: any = todoStore.create(todo.value); // for new todo, the id is returned from the api
   todo.value.id = id;
@@ -68,7 +68,7 @@ const add = () => {
   title.value = "";
 };
 
-// send a todo to the store after setting the values
+// send todo to store after setting the values
 const complete = (todo: Todo) => {
   todo.completed = true;
   todo.completedDate = new Date();
