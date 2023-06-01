@@ -5,6 +5,12 @@ const errorCode = ref(0);
 
 const errorMessages = [
   {
+    code: 0,
+    message1: "There was a problem communicating with the server.",
+    message2: "Check with the site admin or contact the NOC",
+    icon: "alert-circle",
+  },
+  {
     code: 400,
     message1: "There was a problem communicating with the server.",
     message2: "Check with the site admin or contact the NOC",

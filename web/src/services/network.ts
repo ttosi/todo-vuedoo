@@ -25,7 +25,15 @@ const network = {
         .then((response) => this.handleStatus(response, reject))
         .then((response) => response.json())
         .then((data) => resolve(data))
-        .catch((err) => reject(err))
+        .catch((err) => {
+          if (err.toString().indexOf("Failed to fetch") > -1) {
+            console.log("Failed");
+            hasSiteError.value = true;
+            errorCode.value = 0;
+            reject("Failed to connect to connect to server");
+          }
+          // reject(err);
+        })
         .finally(() => (isPageLoading.value = false));
     });
   },
@@ -42,9 +50,7 @@ const network = {
         .then((response) => response.json())
         .then((data) => resolve(data))
         .catch(() =>
-          reject(
-            "There was a problem communicating with the server. Please, try again later"
-          )
+          reject("There was a problem communicating with the server. Please, try again later")
         )
         .finally(() => (isPageLoading.value = false));
     });
@@ -96,9 +102,7 @@ const network = {
         reject("404 Not Found");
         break;
       case 409:
-        reject(
-          "The project has been modified by another user. Refresh page to make changes."
-        );
+        reject("The project has been modified by another user. Refresh page to make changes.");
         break;
       default:
         return response;

@@ -18,9 +18,12 @@ export const useTodoStore = defineStore("todo", {
   actions: {
     async list() {
       const todos = await network.get(`${this.endpoint}/`);
+      // the response from the api is plain json, the getObjectsFromJson
+      // casts the json to actual Todos class
       this.todos = getObjectsFromJson(Todo, todos as Todo[]);
     },
     async create(todo: Todo) {
+      // when creating a new todo the id is returned from the api
       await network.post(`${this.endpoint}/`, todo).then((res: any) => (todo.id = res.id));
     },
     async update(todo: Todo) {
