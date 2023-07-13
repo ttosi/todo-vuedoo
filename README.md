@@ -41,7 +41,7 @@ CREATE TABLE [dbo].[Todo](
 GO
 ```
 
-Install EF framework:
+Install Entity Framework tools:
 ```
 dotnet tool install --global dotnet-ef
 ```
