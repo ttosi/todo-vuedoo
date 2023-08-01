@@ -41,9 +41,15 @@ CREATE TABLE [dbo].[Todo](
 GO
 ```
 
+Install Entity Framework tools:
+```
+dotnet tool install --global dotnet-ef
+```
+
 Put your connection string in the `"db_conn_string"` in `api\appsettings.Development.json`
 
 Then scaffold the database:
+
 
 ```
 dotnet ef dbcontext scaffold --use-database-names Name="db_conn_string" Microsoft.EntityFrameworkCore.SqlServer -o Models
