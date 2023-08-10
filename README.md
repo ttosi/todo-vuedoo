@@ -44,6 +44,7 @@ GO
 Install Entity Framework tools:
 ```
 dotnet tool install --global dotnet-ef
+dotnet tool install --global dotnet-aspnet-codegenerator
 ```
 
 Put your connection string in the `"db_conn_string"` in `api\appsettings.Development.json`
